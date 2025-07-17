@@ -1,10 +1,18 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import Worker from "./component/Worker"
+
 function App() {
 
   return (
-    <div> 
-      <p className="text-center">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className='App'> 
+    <Worker />
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Worker />}>
+        </Route>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
