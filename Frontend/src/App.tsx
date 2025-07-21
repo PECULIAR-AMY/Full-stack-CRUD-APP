@@ -6,7 +6,6 @@ function App() {
 
   return (
     <div className='App'> 
-    <Worker />
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Worker />}>
