@@ -1,18 +1,36 @@
-import React from 'react'
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+ import React from 'react'
+ import { useEffect, useState } from 'react';
+ import axios from 'axios';
+ 
 
-function Worker() {
+ function Worker() {
 
-  // useEffect(() =>{
-  //   axios.get("http://localhost:5000/");
-  // }, [])
+ useEffect(() =>{
+   axios.get("http://localhost:5000/");
+ }, [])
 
-  return (
-    <div className='flex flex-col items-center justify-center h-min-screen bg-blue p-4'>
-     <h1>Hello dearie</h1>
-    </div>
-  )
-}
+   return (
+     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-500 p-4">
+  <div className="w-[75%] bg-white rounded p-4 shadow-lg">
+    <button className="btn btn-success mb-4" >Add +</button>
 
-export default Worker
+    <table className="w-full">
+      <thead>
+        <tr>
+          <th className="text-left pb-2">Name</th>
+          <th className="text-left pb-2">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+    
+  </div>
+</div>
+
+   )
+ }
+
+ export default Worker
+
