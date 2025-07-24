@@ -23,6 +23,17 @@ function Workers() {
       });
   }, []);
 
+  const handleDelete = async (id: number) => {
+    axios.delete(`http://localhost:3000/delete/${id}`)
+      .then(res => {
+        console.log('Deleted worker:', res.data);
+        setWorkers(workers.filter(worker => worker.ID !== id));
+      })
+      .catch(err => {
+        console.error('Error deleting worker:', err);
+      });
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-500 p-4">
       <div className="w-[75%] bg-white rounded p-4 shadow-lg">
@@ -41,8 +52,8 @@ function Workers() {
                 <td>{data.Name}</td>
                 <td>{data.email}</td>
                 <td>
-                  <button className="text-white hover:underline bg-blue-500 rounded ">update</button>
-                  <button className="text-white hover:underline bg-red-500 rounded my-2">Delete</button>
+                  <Link to={`update/${data.ID}`}className="text-white hover:underline bg-blue-500 rounded ">update</Link>
+                  <button className="text-white hover:underline bg-red-500 rounded my-2" onClick={() => handleDelete(data.ID)}>Delete</button>
                 </td>
               </tr>
             ))}

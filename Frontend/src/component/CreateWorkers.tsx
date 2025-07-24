@@ -1,10 +1,27 @@
 import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function CreateStudents() {
+function CreateWorkers() {
+
+    const [name, setName ] = useState('')
+    const [email, setEmail] = useState('')
+    const navigate =useNavigate();
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      axios.post("http://localhost:3000/create", {name,email})
+      .then(res => {
+        console.log(res);
+        navigate('/')
+      }).catch(err=>console.log(err));
+    };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-white  px-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2 className="text-2xl font-bold mb-4 text-center text-green-600">Add Student</h2>
 
           <div className="mb-4">
@@ -13,6 +30,7 @@ function CreateStudents() {
               type="text"
               placeholder="Enter full name"
               className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-400"
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
 
@@ -22,6 +40,7 @@ function CreateStudents() {
               type="email"
               placeholder="Enter email address"
               className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-400"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -36,5 +55,4 @@ function CreateStudents() {
     </div>
   );
 }
-
-export default CreateStudents;
+export default CreateWorkers;
