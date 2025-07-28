@@ -49,7 +49,7 @@ function UpdateWorkers() {
             type="submit"
             className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition duration-300"
           >
-            Update Workers 
+            Update Workers and make sure its cool 
           </button>
         </form>
       </div>
