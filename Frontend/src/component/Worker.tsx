@@ -52,7 +52,7 @@ function Workers() {
                 <td>{data.Name}</td>
                 <td>{data.email}</td>
                 <td>
-                  <Link to={`update/${data.ID}`}className="text-white hover:underline bg-blue-500 rounded ">update</Link>
+                  <Link to={`update/${data.ID}`}className="text-white hover:underline bg-blue-500 rounded ">updated</Link>
                   <button className="text-white hover:underline bg-red-500 rounded my-2" onClick={() => handleDelete(data.ID)}>Delete</button>
                 </td>
               </tr>
