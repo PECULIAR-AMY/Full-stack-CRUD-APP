@@ -26,7 +26,7 @@ function UpdateWorkers() {
           <h2 className="text-2xl font-bold mb-4 text-center text-green-600">Update Workers</h2>
 
           <div className="mb-4">
-            <label className="block text-gray-700 font-semibold mb-1">Name</label>
+            <label className="block text-gray-700 font-semibold mb-1">Name of students</label>
             <input
               type="text"
               placeholder="Enter full name"
